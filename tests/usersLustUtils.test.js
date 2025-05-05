@@ -3,14 +3,14 @@ import {
   filterUsersByAge,
   sortUsersByName,
   findUserById,
-  isEmailTaken
+  isEmailTaken,
 } from '../utils/usersListUtils.js';
 
 describe('usersListUtils', () => {
   const users = [
     { id: 1, name: 'Anna', age: 25, email: 'anna@example.com' },
     { id: 2, name: 'John', age: 30, email: 'john@example.com' },
-    { id: 3, name: 'Bella', age: 20, email: 'bella@example.com' }
+    { id: 3, name: 'Bella', age: 20, email: 'bella@example.com' },
   ];
 
   describe('filterUsersByAge', () => {
@@ -18,7 +18,7 @@ describe('usersListUtils', () => {
       const result = filterUsersByAge(users, 21, 30);
       expect(result).to.deep.equal([
         { id: 1, name: 'Anna', age: 25, email: 'anna@example.com' },
-        { id: 2, name: 'John', age: 30, email: 'john@example.com' }
+        { id: 2, name: 'John', age: 30, email: 'john@example.com' },
       ]);
     });
 
