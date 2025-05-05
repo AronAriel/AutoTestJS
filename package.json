@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha --require @babel/register --reporter mochawesome tests/*.test.js",
     "coverage": "c8 --reporter=html --reporter=text mocha tests/*.test.js",
-    "prepare": "chmod +x .husky/* && husky install",
+    "prepare": "chmod +x node_modules/.bin/husky && husky install",
     "lint": "eslint utils tests --fix",
     "lint:check": "eslint utils tests"
   },
