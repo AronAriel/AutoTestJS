@@ -1,20 +1,49 @@
 {
-  "name": "practice_unit",
+  "name": "practice_unit_homework",
   "version": "1.0.0",
-  "description": "",
+  "description": "Practice project with unit tests - Homework",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require @babel/register --reporter mochawesome tests/*.test.js",
+    "coverage": "c8 --reporter=html --reporter=text mocha tests/*.test.js",
+    "prepare": "chmod +x node_modules/.bin/husky && husky install",
+    "lint": "eslint utils tests --fix",
+    "lint:check": "eslint utils tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryasrdp/practice_unit.git"
+    "url": "git+https://github.com/AronAriel/AutoTestJS.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ryasrdp/practice_unit/issues"
+    "url": "https://github.com/AronAriel/AutoTestJS.git"
   },
-  "homepage": "https://github.com/ryasrdp/practice_unit#readme"
+  "homepage": "https://github.com/AronAriel/AutoTestJS.git",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/eslint-parser": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "@eslint/js": "^9.26.0",
+    "c8": "^10.1.3",
+    "chai": "^5.2.0",
+    "eslint": "^9.26.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.5.1",
+    "mocha": "^11.1.0",
+    "mochawesome": "^7.1.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
